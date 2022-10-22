@@ -1,0 +1,6 @@
+name: Pitt-Challenge
+services:
+- name: web
+  github:
+    repo: digitalocean/Pitt-Challenge
+    branch: flask-test
