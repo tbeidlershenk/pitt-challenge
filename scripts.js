@@ -1,11 +1,18 @@
-/*let request = new XMLHttpRequest();
-request.open("GET", "https://medlineplus.gov/druginformation.html");
-request.send();
-request.onload = () => {
-    console.log(request);
-    if (request.status === 200){
-        console.log(JSON.parse(request.response));
-    } else {
-        console.log(`error ${request.status} ${request.statusText}`)
-    }
-}*/
+document.getElementById('image').addEventListener('click', openDialog);
+
+function openDialog() {
+  document.getElementById('fileid').click();
+}
+
+const image_input = document.querySelector("#fileid");
+
+image_input.addEventListener("change", function() {
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+        const uploaded_image = reader.result;
+        document.querySelector("#picture").style.backgroundImage = `url(${uploaded_image})`;
+        image.src = readerEvent.target.result;
+    });
+    reader.readAsDataURL(this.files[0]);
+  });
+
