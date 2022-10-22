@@ -1,5 +1,5 @@
 from random import shuffle
-import time
+from datetime import datetime
 from ConvNeuralNetwork import ConvNeuralNetwork
 from CustomDataset import CustomDataset
 from createDateframe import create_dictionary, linkNameNDC, top_8_df
@@ -11,6 +11,7 @@ import torch
 from CustomDataset import CustomDataset
 from torch.utils.data import DataLoader
 from train_test import train, test
+
 
 # create ideal dataframe
 all_labels = pd.read_csv("content/PillDataset/all_labels.csv")
@@ -46,4 +47,5 @@ model = train(model, 5, train_loader)
 print("testing model")
 test(model, test_set)
 
-torch.save(model, "content/Model/App/flask-app/models/" + "test" + ".pt")
+time = str(datetime.now())
+torch.save(model, "content/Model/App/flask-app/models/" + time + ".pt")
