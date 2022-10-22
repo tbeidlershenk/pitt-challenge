@@ -1,3 +1,9 @@
 # Pitt-Challenge
 
-## Popping Pills
+## Pill Identifier
+
+### Project Motivation
+
+### Project Description
+
+
