@@ -22,7 +22,7 @@ request.open('GET', "https://jsonplaceholder.typicode.com/users", true)
 request.onload = () => {
     let result = JSON.parse(request.responseText)
     let pill1 = result[0]
-    document.getElementById("pill1").textContent = pill1.name + "    " + pill1.username;
+    /*document.getElementById("pill1").textContent = pill1.name + "    " + pill1.username;*/
     console.log(result[0]);
 }
 request.send()
