@@ -1,4 +1,5 @@
 from random import shuffle
+import time
 from ConvNeuralNetwork import ConvNeuralNetwork
 from CustomDataset import CustomDataset
 from createDateframe import create_dictionary, linkNameNDC, top_8_df
@@ -38,6 +39,11 @@ train_loader = DataLoader(dataset=train_set, batch_size=batch_size, shuffle=True
 test_loader = DataLoader(dataset=test_set, batch_size=1, shuffle=True)
 
 # test model
+print("model created")
 model = ConvNeuralNetwork()
+print("training model")
 model = train(model, 5, train_loader)
+print("testing model")
 test(model, test_set)
+
+torch.save(model, "content/Model/App/flask-app/models/" + "test" + ".pt")
