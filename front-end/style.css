@@ -20,16 +20,17 @@ body {
     background-position: 50% 50%;
 }
 
-.pill1 {
+#pill1 {
     
     border: 2px solid white;
     color: rgba(255, 184, 28, 1);
     text-align: center;
     transform:translate(0%,150%);
     margin: 0 auto;
+    font-size: 250%;
 }
 
-.pill2 {
+#pill2 {
 
     border: 2px solid white;
     color: rgba(255, 184, 28, 1);
@@ -38,7 +39,7 @@ body {
     margin: 0 auto;
 }
 
-.pill3 {
+#pill3 {
     border: 2px solid white;
     color: rgba(255, 184, 28, 1);
     text-align: center;
