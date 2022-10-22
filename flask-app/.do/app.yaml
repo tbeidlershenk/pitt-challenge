@@ -2,5 +2,5 @@ name: Pitt-Challenge
 services:
 - name: web
   github:
-    repo: digitalocean/Pitt-Challenge
+    repo: tbeidlershenk/Pitt-Challenge
     branch: flask-test

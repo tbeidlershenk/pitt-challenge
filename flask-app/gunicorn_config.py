@@ -1,4 +1,4 @@
-from app.main import app
+import main
  
 bind = "0.0.0.0:8080"
 workers = 2

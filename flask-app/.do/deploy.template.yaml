@@ -1,7 +1,7 @@
 spec:
-  name: sample-flask
+  name: Pitt-Challenge
   services:
   - name: web
     git:
-      branch: main
-      repo_clone_url: https://github.com/digitalocean/sample-flask.git
+      branch: flask-app
+      repo_clone_url: https://github.com/tbeidlershenk/Pitt-Challenge/tree/flask-test/flask-app.git
