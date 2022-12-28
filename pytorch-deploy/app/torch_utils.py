@@ -46,7 +46,7 @@ def img_to_tensor(img_bytes):
        tsf.ToTensor()
        #tsf.Normalize((0.1307,),(0.3081,))
    ])
-   image = Image.open(io.BytesIO(img_bytes))
+   image = img_bytes
    numpy.array(image).shape
    # reverse (white -> black)
    tensor = 1-transform(image).unsqueeze(0)

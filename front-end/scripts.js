@@ -6,15 +6,39 @@ function openDialog() {
 
 const image_input = document.querySelector("#fileid");
 
-image_input.addEventListener("change", function() {
-        const reader = new FileReader();
-        reader.addEventListener("load", () => {
-        const uploaded_image = reader.result;
-        document.querySelector("#picture").style.backgroundImage = `url(${uploaded_image})`;
-        image.src = readerEvent.target.result;
-    });
-    reader.readAsDataURL(this.files[0]);
+image_input.addEventListener("change", function () {
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    const uploaded_image = reader.result;
+    document.querySelector("#picture").style.backgroundImage = `url(${uploaded_image})`;
+    document.querySelector("#picture").src = reader.result;
+    console.log('RESULT: ', reader.result)
+
+    fetch("https://pill-identifier.herokuapp.com/predict", {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json', 
+                  "Access-Control-Allow-Origin": "*", 
+                  "Access-Control-Allow-Credentials": "true", 
+                  "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT", 
+                  'Access-Control-Allow-Headers': "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers" 
+                },
+  
+      body: JSON.stringify(reader.result)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      })
   });
+
+  reader.readAsDataURL(this.files[0]);
+  //console.log('JSON String: ', JSON.stringify(reader.result))
+
+  
+})
+
+
+
 
 
 /*let request = new XMLHttpRequest()
