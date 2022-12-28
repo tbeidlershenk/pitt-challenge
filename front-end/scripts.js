@@ -16,6 +16,7 @@ image_input.addEventListener("change", function () {
 
     fetch("https://pill-identifier.herokuapp.com/predict", {
       method: "POST",
+      //headers to avoid CORS problems
       headers: { 'Content-Type': 'application/json', 
                   "Access-Control-Allow-Origin": "*", 
                   "Access-Control-Allow-Credentials": "true", 
@@ -27,7 +28,10 @@ image_input.addEventListener("change", function () {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
+        let pill1 = data.class_name;
+        document.getElementById("pill1").textContent = pill1;
+        console.log("data: ", data.class_name);
+
       })
   });
 
